@@ -1165,18 +1165,4 @@ contract SCATTOKEN is Context, IERC20, Ownable {
         MarketingWallet = newWallet;
     }
     
-    
-    function setMaxTxPercent(uint256 maxTxPercent) external onlyOwner() {
-        require(maxTxPercent > 10, "Cannot set transaction amount less than 10 percent!");
-        _maxTxAmount = _tTotal.mul(maxTxPercent).div(
-            10**2
-        );
-    }
-
-    function setSwapAndLiquifyEnabled(bool _enabled) public onlyOwner {
-        swapAndLiquifyEnabled = _enabled;
-        emit SwapAndLiquifyEnabledUpdated(_enabled);
-    }
-    
-    
 }
